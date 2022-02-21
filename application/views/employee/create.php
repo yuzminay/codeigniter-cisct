@@ -1,5 +1,5 @@
   <div class=" row">
-    <form class="mx-auto">
+    <form id="createEmployee" class="mx-auto">
       <div class="row">
         <div class="mb-3 col-3">
           <label class="form-label">Name</label>
@@ -23,10 +23,10 @@
       <div class="row">
         <div class="mb-3 col-3">
           <label class="form-label">Salary</label>
-          <input name="last_name" type="text" class="form-control">
+          <input name="salary" type="text" class="form-control">
         </div>
       </div>
-      <button type="submit" data-target="#createEmployee" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   </div>
 

@@ -56,3 +56,4 @@ $route['translate_uri_dashes'] = FALSE;
 // Employee Controller
 $route['employee/create'] = 'Employee/EmployeeController/Create';
 $route['employee/search'] = 'Employee/EmployeeController/Search';
+$route['employee/add']    = 'Employee/EmployeeController/Add';

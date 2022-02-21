@@ -11,6 +11,25 @@ class EmployeeController extends CI_Controller
     $this->load->view('template/footer');
   }
 
+  public function add()
+  {
+    $first_name = $this->input->post('first_name');
+    $last_name = $this->input->post('last_name');
+    $job = $this->input->post('job');
+    $hiredate = $this->input->post('hiredate');
+    $salary = $this->input->post('salary');
+
+    $data = array(
+      'name'  => $first_name,
+      'last_name' => $last_name,
+      'job'  => $job,
+      'hiredate'  => $hiredate,
+      'salary'  => $salary,
+    );
+
+    var_dump($data);
+  }
+
   public function search()
   {
     $this->load->view('template/header');
