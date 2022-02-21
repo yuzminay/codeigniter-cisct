@@ -23,4 +23,20 @@ class Employee extends CI_Model
 
     return $res;
   }
+
+  function lookup($keyword)
+  {
+    $this->load->database(); //wtf
+
+    $this->db->select('*')->from('employee');
+
+    $this->db->like('first_name', $keyword, 'after');
+    $this->db->or_like('last_name', $keyword);
+    $this->db->or_like('salary', $keyword);
+    $this->db->or_like('job', $keyword);
+
+    $query = $this->db->get();
+
+    return $query->result();
+  }
 }

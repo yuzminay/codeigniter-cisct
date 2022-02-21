@@ -12,3 +12,33 @@ $("#createEmployee").submit(function (event) {
     }
   });
 });
+
+
+$("#search").keyup(function () {
+  $.ajax({
+    url: "/employee/lookup",
+    data: { keyup: $("#search").val() },
+    type: 'POST',
+    dataType: 'json',
+    success:
+      function (data) {
+        if (data.response == "true") {
+          $("#result").text('');
+          $.each(data.message, function (index) {
+            $("#result").append($("<li>", {}).append(
+              (`
+                ${data.message[index].first_name} 
+                ${data.message[index].last_name} 
+                ${data.message[index].job} 
+                ${data.message[index].salary} 
+                ${data.message[index].hiredate} 
+              `)));
+          });
+        } else {
+          $("#result").text('');
+          console.log('false');
+        }
+
+      },
+  });
+});
