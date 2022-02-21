@@ -15,8 +15,9 @@
           <td><?= @$employee->first_name ?></td>
           <td><?= @$employee->last_name ?></td>
           <td><?= @$employee->job ?></td>
-          <td><?= @$employee->hiredate ?></td>
           <td><?= @$employee->salary ?></td>
+          <td><?= @$employee->hiredate ?></td>
+
         </tr>
       <?php endforeach; ?>
     </tbody>
