@@ -1,3 +1,8 @@
+<?php
+$controller = $this->uri->segment(1);
+$method     = $this->uri->segment(2);
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -22,9 +27,9 @@
     </a>
 
     <ul class="nav nav-pills">
-      <li class="nav-item"><a href="/" class="nav-link active" aria-current="page">Employees</a></li>
-      <li class="nav-item"><a href="/employee/create" class="nav-link">Add</a></li>
-      <li class="nav-item"><a href="/employee/search" class="nav-link">Search</a></li>
+      <li class="nav-item"><a href="/" class="nav-link <?= $controller == NULL ? 'active' : '' ?>" aria-current="page">Employees</a></li>
+      <li class="nav-item"><a href="/employee/create" class="nav-link <?= $method == 'create' ? 'active' : '' ?>">Add</a></li>
+      <li class="nav-item"><a href="/employee/search" class="nav-link <?= $method == 'search' ? 'active' : '' ?>">Search</a></li>
     </ul>
   </header>
   <main class="main">
