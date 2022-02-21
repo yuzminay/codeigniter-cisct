@@ -20,14 +20,18 @@ class EmployeeController extends CI_Controller
     $salary = $this->input->post('salary');
 
     $data = array(
-      'name'  => $first_name,
+      'id' => '',
+      'first_name'  => $first_name,
       'last_name' => $last_name,
       'job'  => $job,
       'hiredate'  => $hiredate,
       'salary'  => $salary,
     );
 
-    var_dump($data);
+    $this->load->model('Employee');
+    $success = $this->Employee->createData($data);
+
+    echo json_encode($success);
   }
 
   public function search()
